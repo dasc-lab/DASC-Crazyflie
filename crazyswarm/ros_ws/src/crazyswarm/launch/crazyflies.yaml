@@ -1,0 +1,57 @@
+crazyflies:
+- channel: 1
+  id: 1
+  initialPosition:
+  - 1.0
+  - 1.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 1
+  id: 2
+  initialPosition:
+  - 1.0
+  - 0.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 1
+  id: 3
+  initialPosition:
+  - 1.0
+  - -1.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 1
+  id: 4
+  initialPosition:
+  - 0.0
+  - -1.0
+  - -0.02
+  type: defaultSingleMarker
+- channel: 5
+  id: 5
+  initialPosition:
+  - -1.0
+  - -1.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
+  id: 6
+  initialPosition:
+  - -1.0
+  - 0.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
+  id: 7
+  initialPosition:
+  - -1.0
+  - 1.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
+  id: 8
+  initialPosition:
+  - 0.0
+  - 1.0
+  - 0.0
+  type: defaultSingleMarker
