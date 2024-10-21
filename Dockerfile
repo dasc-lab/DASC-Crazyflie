@@ -55,13 +55,12 @@ RUN python3 -m pip install -U jax jaxlib
 RUN python3 -m pip install cvxpy
 
 
-
-# Download vim profile from Dev
-RUN wget https://raw.githubusercontent.com/dev10110/dotfiles/main/.vimrc -O /root/.vimrc
-
 # Source ROS environment and workspace setup
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /root/.bashrc
 RUN echo "source /root/crazyswarm/ros_ws/devel/setup.bash" >> /root/.bashrc
+
+
+ENV CSW_PYTHON=python3
 
 WORKDIR /root/crazyswarm
 
