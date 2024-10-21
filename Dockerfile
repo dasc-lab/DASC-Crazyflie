@@ -1,11 +1,5 @@
 FROM osrf/ros:noetic-desktop-full
 
-# Set environment variable for Python version
-
-
-
-
-
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
@@ -59,7 +53,7 @@ RUN python3 -m pip install cvxpy
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /root/.bashrc
 RUN echo "source /root/crazyswarm/ros_ws/devel/setup.bash" >> /root/.bashrc
 
-
+# Set environment variable for Python version
 ENV CSW_PYTHON=python3
 
 WORKDIR /root/crazyswarm
