@@ -16,15 +16,25 @@ if __name__ == "__main__":
         cf.setParam("ring/effect", 7)
 
     # Generate all possible on/off rgb values.
-    rgb_bits = [tuple((x >> k) & 0x1 for k in range(3)) for x in range(8)]
-    allcfs.takeoff(targetHeight=1.0, duration=2.0)
+    # rgb_bits = [tuple((x >> k) & 0x1 for k in range(3)) for x in range(8)]
+    # allcfs.takeoff(targetHeight=1.0, duration=2.0)
     
-    timeHelper.sleep(2.5)
+    # timeHelper.sleep(2.5)
+
+    # TRIALS = 1
+    # for i in range(TRIALS):
+    #     for rgb in rgb_bits:
+    #         for cf in allcfs.crazyflies:
+    #             cf.setLEDColor(*rgb)
+    #         timeHelper.sleep(1.0)
+
+    rgb_bits = [(0.5,0.5,0)]
+    # allcfs.takeoff(targetHeight=1.0, duration=2.0)
+    
 
     TRIALS = 1
     for i in range(TRIALS):
         for rgb in rgb_bits:
             for cf in allcfs.crazyflies:
                 cf.setLEDColor(*rgb)
-            timeHelper.sleep(1.0)
-
+            timeHelper.sleep(2.0)

@@ -20,7 +20,7 @@
           estimator: 2 # 1: complementary, 2: kalman
           controller: 1 # 1: PID, 2: mellinger, 3: Indie
         ring:
-          effect: 16 # 6: double spinner, 7: solid color, 16: packetRate
+          effect: 7 # 6: double spinner, 7: solid color, 16: packetRate
           solidBlue: 255 # if set to solid color
           solidGreen: 0 # if set to solid color
           solidRed: 0 # if set to solid color
@@ -34,7 +34,7 @@
       motion_capture_type: "vicon" # one of none,vicon,optitrack,optitrack_closed_source,qualisys,vrpn
       object_tracking_type: "libobjecttracker" # one of motionCapture,libobjecttracker
       send_position_only: True # set to False to send position+orientation; set to True to send position only
-      motion_capture_host_name: "192.168.0.149"                                    
+      motion_capture_host_name: "192.168.1.115"          # Flyalb: 192.168.0.149, DASCLab: 192.168.1.115                                   
       # motion_capture_interface_ip: "" # optional for optitrack with multiple interfaces
       save_point_clouds: "/dev/null" # set to a valid path to log mocap point cloud binary file.
       print_latency: True

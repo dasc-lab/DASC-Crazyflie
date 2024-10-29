@@ -6,7 +6,11 @@ LAND_SPEED = 0.5 # m/s
 def main():
     swarm = Crazyswarm()
     timeHelper = swarm.timeHelper
-
+    height = 1
+    Z_SPEED =0.5
+    for cf in swarm.allcfs.crazyflies:
+        cf.takeoff(targetHeight=height, duration=height / Z_SPEED)
+    timeHelper.sleep(height / Z_SPEED)
     positions = [cf.position() for cf in swarm.allcfs.crazyflies]
 
     max_duration = 0.0
