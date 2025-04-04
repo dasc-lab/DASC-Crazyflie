@@ -15,7 +15,9 @@ docker exec -it crazyswarm_workspace-ros-1 bash
 ```
 xhost +
 docker compose up -d
-docker exec -it crazyswarm_workspace-ros-1 bash
+docker exec -it {name of the folder}-ros-1 bash
+cd ~/crazyswarm
+./Build.sh
 ```
 
 # How to Use
