@@ -1,5 +1,6 @@
 # Setup Guide
-1. Open the crazyswarm_workspace folder.
+1. Download Docker 
+2. Get into the directory where `Dockerfile` is located.
 2. Type the following commands.
 ```
 xhost +
