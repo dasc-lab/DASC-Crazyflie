@@ -47,7 +47,7 @@ roslaunch crazyswarm hover_swarm.launch
 In case you get an error with an exit code -6 after launching the crazyswarm node, make sure 
 1. You have typed ```xhost +``` in a command prompt
 2. Connected to the right WIFI
-3. Vicon cameras are on and can sense the crazyflies
+3. Vicon cameras are on and can sense the crazyflies (one way to check is run `roslaunch crazyswarm mocap_helper.launch`)
 4. Connected to the right vicon system (You can check this by looking at the entry for `motion_capture_host_name` in `hover_swarm.yaml` file)
 5. Chooser GUI has been termianted
 6. Crazyradio PA is correctly flashed (the flashed ones have `ok` stickers)
