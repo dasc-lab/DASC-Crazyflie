@@ -60,6 +60,6 @@ In case you get an error with an exit code -6 after launching the crazyswarm nod
 
 If the crazyflies flip over as soon as they take off, check 
 1. Crazyradio PA is correctly flashed (the flashed ones have `ok` stickers)
-2. Propellers are placed correctly (check https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/)
+2. Propellers are placed correctly (check [here](https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyflie-2-x/) for more information)
 3. Crazyflies are using the PID controller when doing velocity commands (You can check this by looking at the entry for `controller` in `hover_swarm.launch` file)
 
