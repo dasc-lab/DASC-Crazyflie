@@ -1,8 +1,8 @@
 crazyflies:
-- channel: 6
-  id: 9
+- channel: 1
+  id: 1
   initialPosition:
-  - 0.6
-  - 0.6
+  - 0.0
+  - 0.0
   - 0.0
   type: defaultSingleMarker

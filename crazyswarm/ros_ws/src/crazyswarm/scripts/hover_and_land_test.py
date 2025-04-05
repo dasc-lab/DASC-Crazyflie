@@ -1,7 +1,8 @@
 from pycrazyswarm import *
 from hover_and_land import *
 
-# Tesing the system
+
+# Tesing take off, hover, and land 
 def main():
     swarm = Crazyswarm()
     print("Testing taking off and hovering...")

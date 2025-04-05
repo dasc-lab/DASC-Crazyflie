@@ -4,6 +4,8 @@ import atexit
 import numpy as np
 
 from . import genericJoystick
+from std_msgs.msg import Bool
+import rospy
 
 # Building the parser in a separate function allows sphinx-argparse to
 # auto-generate the documentation for the command-line flags.
@@ -27,6 +29,9 @@ def build_argparser(parent_parsers=[]):
 
 class Crazyswarm:
     def __init__(self, crazyflies_yaml=None, parent_parser=None, args=None):
+        self.status = True
+        rospy.Subscriber("/swarm/status", Bool, self.status_update)    
+
         if parent_parser is not None:
             parents = [parent_parser]
         else:
@@ -56,3 +61,8 @@ class Crazyswarm:
                 print("WARNING: video argument ignored! This is only available in simulation.")
 
         self.input = genericJoystick.Joystick(self.timeHelper)
+
+
+    # The Crazyswarm constantly listens to the published status from emergency_break.py
+    def status_update(self,msg):
+        self.status = msg.data
