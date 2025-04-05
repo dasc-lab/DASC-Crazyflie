@@ -1,6 +1,8 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+cd ~/crazyswarm/ros_ws/
+
 ROOT=$PWD
 
 # submodules
