@@ -44,7 +44,7 @@ roslaunch crazyswarm hover_swarm.launch
 2. In one comamnd prompt, go to the `scripts` folder and run `chooser.py` script to select and deselect the crazyflies you would like to include in deployment. Selecting and Deselecting modifies `crazyflies.yaml` file in the same folder
 3. Launch the crazyswarm node in another command prompt
 4. Now you are ready to run your script
-5. To test hovering and landing, you can run `hover_and_land_test.py` in the `scripts` folder.
+5. To test hovering and landing, you can run `first_test.py` in the `scripts` folder.
 
 # Emegency Shutdown
 1. We have `emergency_break.py` that constantly publishes the status=True of `Crazyswarm` class
