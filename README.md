@@ -1,17 +1,15 @@
 # Setup Guide
-1. Download Docker 
-2. Get into the directory where `Dockerfile` is located.
-2. Type the following commands.
+1. Download Docker from [here](https://docs.docker.com/engine/install/ubuntu/)
+2. Get into the directory where `Dockerfile` is located
+3. On the command prompt, type the following commands
 ```
 xhost +
 docker build .
 docker compose up -d
-docker exec -it crazyswarm_workspace-ros-1 bash
+docker exec -it {name of the folder}-ros-1 bash
 ```
-
 # How to Start
-1. Open the crazyswarm_workspace folder.
-2. Type the following commands.
+On the command prompt, type the following commands.
 ```
 xhost +
 docker compose up -d
@@ -19,7 +17,7 @@ docker exec -it {name of the folder}-ros-1 bash
 cd ~/crazyswarm
 ./Build.sh
 ```
-
+For more information, you can look at the instructions in [here](https://crazyswarm.readthedocs.io/en/latest/installation.html)
 # How to Use
 1. All the scripts are located in the directory `scripts` folder in `~/crazyswarm/ros_ws/src/crazyswarm/scripts`
 You can access this folder by typing 
@@ -42,7 +40,7 @@ roslaunch crazyswarm hover_swarm.launch
 # Flying Drones
 1. First, you want to set up the initial positions of the crazyflies. We can do this by modifying `allCrazyflies.yaml` file in `~/crazyswarm/ros_ws/src/crazyswarm/launch/` 
 2. In one comamnd prompt, go to the `scripts` folder and run `chooser.py` script to select and deselect the crazyflies you would like to include in deployment. Selecting and Deselecting modifies `crazyflies.yaml` file in the same folder
-3. Launch the crazyswarm node in another command prompt
+3. Launch the crazyswarm node 
 4. Now you are ready to run your script
 5. To test hovering and landing, you can run `first_test.py` in the `scripts` folder.
 
