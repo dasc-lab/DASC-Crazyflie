@@ -4,7 +4,7 @@
 3. On the command prompt, type the following commands
 ```
 xhost +
-docker build .
+docker compose build
 docker compose up -d
 docker exec -it {name of the folder}-ros-1 bash
 ```
