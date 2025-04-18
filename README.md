@@ -37,6 +37,7 @@ roslaunch crazyswarm hover_swarm.launch
 4. In case you would like to just run the simulation, type `python3 'python_script_name'.py --sim`
 
 # Flashing Firmwares
+### Cannot flash multiple crazyflies at the same time (needs a further investigation)
 1. When turing on the crazyflie, press its power button for 3 seconds to put it into the bootloader mode
 2. Turn the CFclient, and go to Connect -> Bootloader -> Cold boot (recovery)
 3. Initiate bootloader cold boot -> Program
