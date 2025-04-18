@@ -36,6 +36,12 @@ roslaunch crazyswarm hover_swarm.launch
 3. Once the node is running, open another command propt and get into the docker file again, go to the `scripts` folder, and run the python script
 4. In case you would like to just run the simulation, type `python3 'python_script_name'.py --sim`
 
+# Flashing Firmwares
+1. Go to CFclient
+2. Turn the power of the crazyflie I am interested to flash, and press the power button for 3 seconds
+3. Go to Connect -> Bootloader -> Cold boot (recovery)
+4. Initiate bootloader cold boot -> Program
+5. Wait until everything is finished
 
 # Flying Drones
 1. First, you want to set up the initial positions of the crazyflies. We can do this by modifying `allCrazyflies.yaml` file in `~/crazyswarm/ros_ws/src/crazyswarm/launch/` 
