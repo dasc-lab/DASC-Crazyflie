@@ -63,6 +63,7 @@ In case you get an error with an exit code -6 after launching the crazyswarm nod
 4. You are connected to the right vicon system (You can check this by looking at the entry for `motion_capture_host_name` in `hover_swarm.yaml` file)
 5. Your chooser GUI is not on
 6. Your computer can recognize the Crazyradio PA, and the radio is also correctly flashed (the flashed ones have `ok` stickers)
+7. You have connected enough Crazyradios, i.e. if you have 3 different channels, you need 3 radios
 
 If the crazyflies flip over as soon as they take off, check 
 1. Crazyradio PA is correctly flashed (the flashed ones have `ok` stickers)
