@@ -6,3 +6,94 @@ crazyflies:
   - 0.0
   - 0.0
   type: defaultSingleMarker
+- channel: 1
+  id: 2
+  initialPosition:
+  - 0.6
+  - 0.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 1
+  id: 3
+  initialPosition:
+  - 0.6
+  - -0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 1
+  id: 4
+  initialPosition:
+  - 0.0
+  - -0.6
+  - -0.02
+  type: defaultSingleMarker
+- channel: 5
+  id: 6
+  initialPosition:
+  - -0.6
+  - 0.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
+  id: 7
+  initialPosition:
+  - -0.6
+  - 0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
+  id: 8
+  initialPosition:
+  - 0.0
+  - 0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 9
+  initialPosition:
+  - 0.6
+  - 0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 10
+  initialPosition:
+  - 1.2
+  - 0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 11
+  initialPosition:
+  - 1.2
+  - 0.0
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 12
+  initialPosition:
+  - 1.2
+  - -0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 13
+  initialPosition:
+  - 1.2
+  - -1.2
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 14
+  initialPosition:
+  - 0.6
+  - -1.2
+  - 0.0
+  type: defaultSingleMarker
+- channel: 6
+  id: 15
+  initialPosition:
+  - -0.6
+  - -0.6
+  - 0.0
+  type: defaultSingleMarker

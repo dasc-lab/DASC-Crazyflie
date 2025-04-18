@@ -63,37 +63,13 @@ crazyflies:
     channel: 6
     initialPosition: [1.2, -1.2, 0.0]
     type: defaultSingleMarker
-  # - id: 1
-  #   channel: 1
-  #   initialPosition: [0.6, 0.0, 0.0]
-  #   type: defaultSingleMarker
-  # - id: 2
-  #   channel: 1
-  #   initialPosition: [0.0, -0.6 , 0.0]
-  #   type: defaultSingleMarker
-  # - id: 3
-  #   channel: 1
-  #   initialPosition: [-0.6, 0.0 , 0.0]
-  #   type: defaultSingleMarker
-  # - id: 4
-  #   channel: 1
-  #   initialPosition: [0.0, 0.6 , -0.02]
-  #   type: defaultSingleMarker
-  # - id: 5
-  #   channel: 5
-  #   initialPosition: [0.6, -0.6 , 0.0]
-  #   type: defaultSingleMarker
-  # - id: 6
-  #   channel: 5
-  #   initialPosition: [-0.6, -1.2 , 0.0]
-  #   type: defaultSingleMarker
-  # - id: 7
-  #   channel: 5
-  #   initialPosition: [-1.2, 0.6 , 0.0]
-  #   type: defaultSingleMarker
-  # - id: 8
-  #   channel: 5
-  #   initialPosition: [1.2, 0.6 , 0.0]
-  #   type: defaultSingleMarker
+    
+  - id: 14
+    channel: 6
+    initialPosition: [0.6, -1.2, 0.0]
+    type: defaultSingleMarker
 
-
+  - id: 15
+    channel: 6
+    initialPosition: [0.0, -1.2, 0.0]
+    type: defaultSingleMarker
