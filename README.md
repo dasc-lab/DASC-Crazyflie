@@ -36,12 +36,18 @@ roslaunch crazyswarm hover_swarm.launch
 3. Once the node is running, open another command propt and get into the docker file again, go to the `scripts` folder, and run the python script
 4. In case you would like to just run the simulation, type `python3 'python_script_name'.py --sim`
 
-# Flashing Firmwares
+# Flashing Firmwares 
+## Crazyflies
 ### Cannot flash multiple crazyflies at the same time (needs a further investigation)
 1. When turing on the crazyflie, press its power button for 3 seconds to put it into the bootloader mode
 2. Turn the CFclient, and go to Connect -> Bootloader -> Cold boot (recovery)
 3. Initiate bootloader cold boot -> Program
 4. Wait until everything is finished
+
+## Crazyradio PA/2.1
+1. Go to [here](https://github.com/bitcraze/crazyradio-firmware)
+2. Clone the repo and follow the instructions (ours is Crazyradio PA)
+3. Note we have 4 crazyradio PAs flahsed and working
 
 # Flying Drones
 1. First, you want to set up the initial positions of the crazyflies. We can do this by modifying `allCrazyflies.yaml` file in `~/crazyswarm/ros_ws/src/crazyswarm/launch/` 
