@@ -60,16 +60,16 @@ crazyflies:
     type: defaultSingleMarker
     
   - id: 13
-    channel: 6
+    channel: 7
     initialPosition: [1.2, -1.2, 0.0]
     type: defaultSingleMarker
     
   - id: 14
-    channel: 6
+    channel: 7
     initialPosition: [0.6, -1.2, 0.0]
     type: defaultSingleMarker
 
   - id: 15
-    channel: 6
+    channel: 7
     initialPosition: [0.0, -1.2, 0.0]
     type: defaultSingleMarker

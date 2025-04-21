@@ -28,6 +28,13 @@ crazyflies:
   - -0.02
   type: defaultSingleMarker
 - channel: 5
+  id: 5
+  initialPosition:
+  - -0.6
+  - -0.6
+  - 0.0
+  type: defaultSingleMarker
+- channel: 5
   id: 6
   initialPosition:
   - -0.6
@@ -76,24 +83,24 @@ crazyflies:
   - -0.6
   - 0.0
   type: defaultSingleMarker
-- channel: 6
+- channel: 7
   id: 13
   initialPosition:
   - 1.2
   - -1.2
   - 0.0
   type: defaultSingleMarker
-- channel: 6
+- channel: 7
   id: 14
   initialPosition:
   - 0.6
   - -1.2
   - 0.0
   type: defaultSingleMarker
-- channel: 6
+- channel: 7
   id: 15
   initialPosition:
-  - -0.6
-  - -0.6
+  - 0.0
+  - -1.2
   - 0.0
   type: defaultSingleMarker
