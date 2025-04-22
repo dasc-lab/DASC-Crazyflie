@@ -62,6 +62,11 @@ class Crazyswarm:
 
         self.input = genericJoystick.Joystick(self.timeHelper)
 
+
+        # Terminates the node when there is an error
+        rospy.on_shutdown(self.emergency_land)
+
+
     # This triggers the robots to land immediately. 
     def emergency_land(self):
         Z_SPEED = 0.75 # m/s
@@ -69,7 +74,7 @@ class Crazyswarm:
         max_duration = 0.0
         for cf in self.allcfs.crazyflies:
             z = cf.position()[2]
-            duration = z / Z_SPEED + 1
+            duration = z / Z_SPEED + 2
             max_duration = max(max_duration, duration)
             cf.land(targetHeight=LAND_HEIGHT, duration=duration)
         self.timeHelper.sleep(max_duration)
