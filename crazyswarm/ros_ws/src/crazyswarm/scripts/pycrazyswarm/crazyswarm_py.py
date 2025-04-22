@@ -62,7 +62,21 @@ class Crazyswarm:
 
         self.input = genericJoystick.Joystick(self.timeHelper)
 
+    # This triggers the robots to land immediately. 
+    def emergency_land(self):
+        Z_SPEED = 0.75 # m/s
+        LAND_HEIGHT = 0.04 #m
+        max_duration = 0.0
+        for cf in self.allcfs.crazyflies:
+            z = cf.position()[2]
+            duration = z / Z_SPEED + 1
+            max_duration = max(max_duration, duration)
+            cf.land(targetHeight=LAND_HEIGHT, duration=duration)
+        self.timeHelper.sleep(max_duration)
 
-    # The Crazyswarm constantly listens to the published status from emergency_break.py
+    # The Crazyswarm constantly listens to the published status
     def status_update(self,msg):
         self.status = msg.data
+        if not self.status:
+            self.emergency_land()
+

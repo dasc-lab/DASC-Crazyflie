@@ -84,8 +84,8 @@ class Agent:
 
 ## Malicious agents
 class Malicious(Agent):
-    def __init__(self,  F, id, dimension):
-        super().__init__(F, id, dimension)
+    def __init__(self,  F, id):
+        super().__init__(F, id)
         self.time = 0
         self.value = 500*np.sin(self.id+self.time/3.5)
         self.history = [self.value]
@@ -105,8 +105,8 @@ class Malicious(Agent):
 
 ## Normal Leaders
 class Leaders(Agent):
-    def __init__(self, value, F, id, dimension):
-        super().__init__(F, id, dimension)
+    def __init__(self, value, F, id):
+        super().__init__(F, id)
         self.value=value
         self.history = []
 
