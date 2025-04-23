@@ -76,3 +76,5 @@ If the crazyflies flip over as soon as they take off, check
 3. Crazyflies are using the PID controller when doing velocity commands (You can check this by looking at the entry for `controller` in `hover_swarm.launch` file)
 4. Battery wires are not blocking the propellers (yeah, seriously. I learned it the hard way)
 
+If the crazyflies suddenly flip over while flying
+1. Make sure you are not using goTo and cmdVelocityWorld together
