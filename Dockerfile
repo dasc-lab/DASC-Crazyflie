@@ -47,6 +47,8 @@ RUN pip install --ignore-installed PyYAML
 RUN pip install pytest scipy matplotlib numpy cfclient 
 RUN python3 -m pip install -U jax jaxlib
 RUN python3 -m pip install cvxpy
+RUN pip install "cvxpy[CVXOPT,GLOP,GLPK,GUROBI,MOSEK,PDLP,SCIP,XPRESS]"
+
 
 
 # Source ROS environment and workspace setup
