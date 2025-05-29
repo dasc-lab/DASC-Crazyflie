@@ -4,21 +4,16 @@ import numpy as np
 from emergency_break import *
 from std_msgs.msg import Bool
 
-# Tesing the hover and emergency break 
+
+HEIGHT = 0.75 # m
+Z_SPEED = 1  # m/s
+
+
 def main():
     swarm = Crazyswarm()
     print("Testing hovering...")
-    timeHelper = swarm.timeHelper
+    hover_all(swarm)
 
-    # Until the status is turned False, the drones keep moving to -x direction
-    for cf in swarm.allcfs.crazyflies:
-        cf.takeoff(targetHeight=HEIGHT, duration=HEIGHT / Z_SPEED)
-    timeHelper.sleep(HEIGHT / Z_SPEED)
-    while True:
-        timeHelper.sleep(0.4)
-        if not swarm.status:
-            break
-    land_all(swarm)
 
 if __name__ == "__main__":
     main()
