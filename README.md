@@ -7,15 +7,15 @@ xhost +
 docker compose build
 docker compose up -d
 docker exec -it {name of the folder}-ros-1 bash
+cd ~/crazyswarm
+./Build.sh
 ```
 # How to Start
-On the command prompt, type the following commands.
+Once it is built, from next time, you can run the docker container on the command prompt by typing the following commands.
 ```
 xhost +
 docker compose up -d
 docker exec -it {name of the folder}-ros-1 bash
-cd ~/crazyswarm
-./Build.sh
 ```
 or you can simply type 
 ```./_start.bash```
