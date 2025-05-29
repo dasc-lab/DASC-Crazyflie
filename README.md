@@ -17,6 +17,9 @@ docker exec -it {name of the folder}-ros-1 bash
 cd ~/crazyswarm
 ./Build.sh
 ```
+or you can simply type 
+```./_start.bash```
+
 For more information, you can look at the instructions in [here](https://crazyswarm.readthedocs.io/en/latest/installation.html)
 # How to Use
 1. All the scripts are located in the directory `scripts` folder in `~/crazyswarm/ros_ws/src/crazyswarm/scripts`
