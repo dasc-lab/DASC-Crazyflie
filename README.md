@@ -11,13 +11,7 @@ cd ~/crazyswarm
 ./Build.sh
 ```
 # How to Start
-Once it is built, from next time, you can run the docker container on the command prompt by typing the following commands.
-```
-xhost +
-docker compose up -d
-docker exec -it {name of the folder}-ros-1 bash
-```
-or you can simply type 
+After it is built, you can run the docker container on the command prompt by typing the following commands.
 ```./_start.bash```
 
 For more information, you can look at the instructions in [here](https://crazyswarm.readthedocs.io/en/latest/installation.html)
