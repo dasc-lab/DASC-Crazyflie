@@ -3,8 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import hungarian
 import cvxpy as cp
+from pycrazyswarm.crazyflie import Crazyflie
 
-N_CFS = 9  # Number of Crazyflies in the swarm
+N_CFS = 2  # Number of Crazyflies in the swarm
 Z_HEIGHT = 1.0  # Height at which the Crazyflies will operate
 
 L_SHAPE = np.array([
@@ -81,7 +82,7 @@ def get_current_positions(swarm):
     """
     return np.array([cf.position() for cf in swarm.allcfs.crazyflies])
 
-def transform_pos(pos, pitch, roll, yaw, offset = np.array([0.0,0.0,0.0])):
+def transform_pos(pos, origin, pitch, roll, yaw):
     """
     Transforms a given shape by applying a translation and rotation.
     :param shape: The original position
@@ -101,7 +102,7 @@ def transform_pos(pos, pitch, roll, yaw, offset = np.array([0.0,0.0,0.0])):
          np.cos(pitch) * np.cos(roll)]
     ])
     
-    return rotation_matrix @ pos + offset
+    return rotation_matrix @ (pos-origin) + origin
 
 def move(swarm,shape, assignment):
 ################################## CBF-QP Controller ####################################
@@ -178,12 +179,14 @@ def make_shape(swarm, shape, duration = 2.0, angle_increment=np.deg2rad(10.0)):
             roll += angle_increment
         elif user_input == "d":
             roll -= angle_increment
+        else:
+            continue
 
         roll = np.clip(roll, -np.pi/6, np.pi/6)
         pitch = np.clip(pitch, -np.pi/6, np.pi/6)
 
         for (i, pos) in optimal_assignment:
-            swarm.allcfs.crazyflies[i].goTo(transform_pos(np.append(shape[pos], Z_HEIGHT), pitch, roll, yaw), 0, duration)
+            swarm.allcfs.crazyflies[i].goTo(transform_pos(np.append(shape[pos], Z_HEIGHT), np.array([0.0,0.0,Z_HEIGHT]), pitch, roll, yaw), 0, duration)
 
         swarm.timeHelper.sleep(duration)
     return False
@@ -209,16 +212,12 @@ def main():
         cf.takeoff(targetHeight=Z_HEIGHT, duration=1.0)
     timeHelper.sleep(1.0)
 
-    # Get current positions
-
-    sequence = [L_SHAPE, FOUR_SHAPE, D_SHAPE, C_SHAPE, initial_positions]
-    for shape in sequence:
-        land = make_shape(swarm, shape, duration=5.0)
-        if land:
-            break
-
-    # for cf in swarm.allcfs.crazyflies:
-    #     cf.disableCollisionAvoidance()
+    if (input("Continue? [y/n]") == "y"):
+        sequence = [L_SHAPE, FOUR_SHAPE, D_SHAPE, C_SHAPE, initial_positions]
+        for shape in sequence:
+            land = make_shape(swarm, shape, duration=5.0)
+            if land:
+                break
 
     land_all(swarm)
 
