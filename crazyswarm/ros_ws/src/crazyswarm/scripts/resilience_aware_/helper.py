@@ -27,9 +27,9 @@ from single_integrator import *
 def compute_h_and_der(n,x,edges,R, dimension):
 
     #Define the parametrized sigmoid function and its derivative
-    eps = 1/(n-1)- 0.001
+    eps = 1/(n-1)- 0.01
     q1 = 2+eps
-    q2 = 0.9 
+    q2 = 0.7
     sigmoid_A1 = lambda x: q1 / (1+np.exp(-q2*x)) - q1/2
     def compute_der(x_i, x_j):
 
