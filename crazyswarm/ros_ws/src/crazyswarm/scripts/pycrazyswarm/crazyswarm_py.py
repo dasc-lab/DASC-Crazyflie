@@ -31,10 +31,7 @@ def build_argparser(parent_parsers=[]):
 
 class Crazyswarm:
     def __init__(self, crazyflies_yaml=None, parent_parser=None, args=None):
-        self.status = True
         self.triggered = False
-        rospy.Subscriber("/swarm/status", Bool, self.status_update)    
-
         if parent_parser is not None:
             parents = [parent_parser]
         else:
@@ -122,9 +119,8 @@ class Crazyswarm:
             # Stops the drones 
             for i in range(self.n):
                 self.allcfs.crazyflies[i].cmdVelocityWorld(np.zeros(3,), yawRate=0)
+            self.velocity_land_all()
 
-            self.emergency_land_all()
-            self.land_all()
         else:
             current_pos = np.array([drone.position()[:2] for drone in self.allcfs.crazyflies])
             dir = self.init_pos - current_pos
@@ -132,31 +128,23 @@ class Crazyswarm:
             dir = dir/np.linalg.norm(dir)
             self.allcfs.crazyflies[0].cmdVelocityWorld(dir, yawRate=0)
             self.timeHelper.sleep(5)
+            self.velocity_land_all()
 
-            self.emergency_land_all()
-            self.land_all()
-
-        
-    # Drives the drones back to their initial positions and lands the drones
-    def emergency_land(self):
-        if not self.status:
-            print("Emergency not triggered")
-            return 1 
-        self.return_initial_controller()
-
-
-    def emergency_land_all(self):
+    
+    # Lands the drones with velocity commands
+    def velocity_land_all(self):
         Z_SPEED = 0.75 # m/s
         timeHelper = self.timeHelper
         self.status = False
         current_height = np.array([drone.position()[2] for drone in self.allcfs.crazyflies])
         while np.any(current_height>0.2):
             for cf in self.allcfs.crazyflies:
-                cf.cmdVelocityWorld(np.array([0.0,0.0,-0.75]), yawRate=0)
+                cf.cmdVelocityWorld(np.array([0.0,0.0,-Z_SPEED]), yawRate=0)
             timeHelper.sleep(0.01)
             current_height = np.array([drone.position()[2] for drone in self.allcfs.crazyflies])
+        self.land_all()
 
-
+    # Typical landing function
     def land_all(self):
         Z_SPEED = 0.75 # m/s
         LAND_HEIGHT = 0.04 #m
@@ -169,14 +157,3 @@ class Crazyswarm:
             max_duration = max(max_duration, duration)
             cf.land(targetHeight=LAND_HEIGHT, duration=duration)
         timeHelper.sleep(max_duration)
-
-
-    # The Crazyswarm constantly listens to the published status
-    def status_update(self,msg):
-        self.status = msg.data
-        if not self.status and not self.triggered:
-            self.triggered = True
-            self.return_initial_controller()
-            self.timeHelper.sleep(2)
-            self.land_all()
-
