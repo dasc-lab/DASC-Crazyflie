@@ -68,6 +68,7 @@ class Crazyswarm:
 
         # Saves the initial positions of the drones
         self.init_pos = np.array([drone.position()[:2] for drone in self.allcfs.crazyflies])
+        self.init_pos_z = np.array([drone.position() for drone in self.allcfs.crazyflies])
         self.n = len(self.allcfs.crazyflies)
 
         # Land the drones when the node crashes
@@ -117,7 +118,7 @@ class Crazyswarm:
                 current_pos = np.array([drone.position()[:2] for drone in self.allcfs.crazyflies])
                 
                 new_time = self.timeHelper.time()
-                if np.abs(time_original-new_time)>15:
+                if np.abs(time_original-new_time)>10:
                     break
             # Stops the drones 
             for i in range(self.n):
@@ -139,10 +140,20 @@ class Crazyswarm:
         
     # Drives the drones back to their initial positions and lands the drones
     def emergency_land(self):
-        if not self.status:
-            print("Emergency not triggered")
-            return 1 
-        self.return_initial_controller()
+        # if not self.status:
+        #     print("Emergency not triggered")
+        #     return 1 
+        # self.return_initial_controller()
+
+        Z_SPEED = 0.75 # m/s
+        LAND_HEIGHT = 0.04 #m
+        max_duration = 0.0
+        for cf in self.allcfs.crazyflies:
+            z = cf.position()[2]
+            duration = z / Z_SPEED + 2
+            max_duration = max(max_duration, duration)
+            cf.land(targetHeight=LAND_HEIGHT, duration=duration)
+        self.timeHelper.sleep(max_duration)
 
 
     def emergency_land_all(self):
