@@ -59,6 +59,7 @@ roslaunch crazyswarm hover_swarm.launch
 # Emegency Shutdown
 1. We have `emergency_break.py` that constantly publishes the status=True of `Crazyswarm` class
 2. If you interrupt `emergency_break.py`, it will start publishing status=False, which can be used to terminate the ongoing script
+3. Run the script while running your ros node, and interrupt the script if you want to land the drones straight down
 
 # Initial Position Landing
 1. `crazyswarm_py.py` has `return_initial_controller` function, which brings back the drones back to their initial positions
