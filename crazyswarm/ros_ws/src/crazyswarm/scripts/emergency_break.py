@@ -14,7 +14,7 @@ pub = None
 def on_shutdown():
     rospy.loginfo("Shutting down. Publishing swarm status: False")
     if pub is not None:
-        for _ in range(100):
+        for _ in range(200):
             pub.publish(Bool(False))
             rospy.sleep(0.1)
 

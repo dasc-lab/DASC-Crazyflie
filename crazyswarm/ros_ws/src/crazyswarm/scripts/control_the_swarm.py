@@ -49,8 +49,8 @@ def main():
     offset = 0.5
     duration = 2.5
     current_pos = np.array([0.0,0.0,height])
-    x_bounds = [-2.5,2.0]
-    y_bounds = [-2.0,2.0]
+    x_bounds = [-1.5,1.5]
+    y_bounds = [-1.5,1.5]
     z_bounds = [0.5, 7.0]
 
     while True:

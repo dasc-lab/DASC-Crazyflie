@@ -31,7 +31,8 @@ def build_argparser(parent_parsers=[]):
 
 class Crazyswarm:
     def __init__(self, crazyflies_yaml=None, parent_parser=None, args=None):
-        self.triggered = False
+        self.status = True
+        rospy.Subscriber("/swarm/status", Bool, self.status_update)    
         if parent_parser is not None:
             parents = [parent_parser]
         else:
@@ -67,12 +68,16 @@ class Crazyswarm:
         self.init_pos = np.array([drone.position()[:2] for drone in self.allcfs.crazyflies])
         self.n = len(self.allcfs.crazyflies)
 
-        # Land the drones when the node crashes
-        rospy.on_shutdown(self.emergency_land)
+        # Land the drones when the node crahses or the script ends
+        rospy.on_shutdown(self.return_initial_controller)
 
 
     # Brings the drones back to their initial positions while performing collision avoidance
     def return_initial_controller(self):
+
+        # If the emergency landing is triggered, skip the initial position landing
+        if not self.status:
+            return 1 
         
         if self.n>1:
             ################################## CBF-QP Controller ####################################
@@ -135,12 +140,11 @@ class Crazyswarm:
     def velocity_land_all(self):
         Z_SPEED = 0.75 # m/s
         timeHelper = self.timeHelper
-        self.status = False
         current_height = np.array([drone.position()[2] for drone in self.allcfs.crazyflies])
         while np.any(current_height>0.2):
             for cf in self.allcfs.crazyflies:
                 cf.cmdVelocityWorld(np.array([0.0,0.0,-Z_SPEED]), yawRate=0)
-            timeHelper.sleep(0.01)
+            timeHelper.sleep(0.3)
             current_height = np.array([drone.position()[2] for drone in self.allcfs.crazyflies])
         self.land_all()
 
@@ -150,10 +154,17 @@ class Crazyswarm:
         LAND_HEIGHT = 0.04 #m
         timeHelper = self.timeHelper
         max_duration = 0.0
-        self.status = False
         for cf in self.allcfs.crazyflies:
             z = cf.position()[2]
             duration = z / Z_SPEED + 1
             max_duration = max(max_duration, duration)
             cf.land(targetHeight=LAND_HEIGHT, duration=duration)
         timeHelper.sleep(max_duration)
+
+
+    # The Crazyswarm constantly listens to the published status and triggers emergency landing when the status turns false
+    def status_update(self,msg):
+        if not msg.data:
+            self.status = msg.data
+            print("Triggering Emergency Landing")
+            self.velocity_land_all()
