@@ -60,6 +60,10 @@ roslaunch crazyswarm hover_swarm.launch
 1. We have `emergency_break.py` that constantly publishes the status=True of `Crazyswarm` class
 2. If you interrupt `emergency_break.py`, it will start publishing status=False, which can be used to terminate the ongoing script
 
+# Initial Position Landing
+1. `crazyswarm_py.py` has `return_initial_controller` function, which brings back the drones back to their initial positions
+2. Currently, it is set that if the ros node crashes, or the script terminates, the `return_initial_controller` function is automatically called 
+
 
 # Common Debugging
 In case you get an error with an exit code -6 after launching the crazyswarm node, make sure 
