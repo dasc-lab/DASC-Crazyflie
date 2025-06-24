@@ -1,6 +1,6 @@
 ## Acknowledgments
 
-This project is based on [Crazyswarm](https://github.com/USC-ACTLab/crazyswarm) developed by USC ACT Lab.
+This project is based on [Crazyswarm](https://github.com/USC-ACTLab/crazyswarm) developed by USC ACT Lab. The original code is licensed under the MIT License, which is included in this repository.
 
 # Setup Guide
 1. Download Docker from [here](https://docs.docker.com/engine/install/ubuntu/)
