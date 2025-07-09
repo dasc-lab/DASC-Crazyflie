@@ -12,7 +12,7 @@ docker compose build
 docker compose up -d
 docker exec -it {name of the folder}-ros-1 bash
 cd ~/crazyswarm
-./Build.sh
+./build.sh
 ```
 # How to Start
 After it is built, when you want to run the docker container on the command prompt in future, you can simply type the following commands.
