@@ -5,7 +5,7 @@ from emergency_break import *
 from std_msgs.msg import Bool
 
 
-HEIGHT = 0.75 # m
+HEIGHT = 0.6 # m
 Z_SPEED = 1  # m/s
 
 

@@ -1,37 +1,37 @@
 crazyflies:
   - id: 1
     channel: 1
-    initialPosition: [0.0, 0.0, 0.0]
+    initialPosition: [-2.320, 1.315, 0.0]
     type: defaultSingleMarker
 
   - id: 2
     channel: 1
-    initialPosition: [1.0,  0.0, 0.0]
+    initialPosition: [-1.352,1.309, 0.0]
     type: defaultSingleMarker
 
   - id: 3
     channel: 1
-    initialPosition: [1.0,-1.0 , 0.0]
+    initialPosition: [-1.382,2.214, 0.0]
     type: defaultSingleMarker
 
   - id: 4
     channel: 1
-    initialPosition: [0.0, -1.0 , -0.02]
+    initialPosition: [1.705, 1.196 , -0.02]
     type: defaultSingleMarker
 
-  # - id: 5
-  #   channel: 5
-  #   initialPosition: [-1.0, -1.0, 0.0]
-  #   type: defaultSingleMarker
+  - id: 5
+    channel: 5
+    initialPosition: [0.774,  1.707, 0.0]
+    type: defaultSingleMarker
 
   - id: 6
     channel: 5
-    initialPosition: [-1.0, 0.0 , 0.0]
+    initialPosition: [1.736, 0.209, 0.0]
     type: defaultSingleMarker
 
   - id: 7
     channel: 5
-    initialPosition: [-1.0,1.0, 0.0]
+    initialPosition: [1.509, 2.154, 0.0]
     type: defaultSingleMarker
 
   # - id: 8
@@ -41,12 +41,12 @@ crazyflies:
 
   - id: 9
     channel: 6
-    initialPosition: [1.0, 1.0, 0.0]
+    initialPosition: [-0.324,-0.387, 0.0]
     type: defaultSingleMarker
 
   - id: 10
     channel: 6
-    initialPosition: [0.0, 1.0, 0.0]
+    initialPosition: [0.180,-1.394, 0.0]
     type: defaultSingleMarker
 
   # - id: 11
@@ -56,7 +56,7 @@ crazyflies:
 
   - id: 12
     channel: 6
-    initialPosition: [-1.0, -1.0, 0.0]
+    initialPosition: [1.691, -0.387, 0.0]
     type: defaultSingleMarker
     
   # - id: 13
