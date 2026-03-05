@@ -52,6 +52,7 @@ roslaunch crazyswarm hover_swarm.launch
 1. Go to [here](https://github.com/bitcraze/crazyradio-firmware)
 2. Clone the repo and follow the instructions (ours is Crazyradio PA)
 3. Note we have 4 crazyradio PAs flahsed and working
+4. Please install the necessary drivers and allow the radios via [here](https://www.bitcraze.io/documentation/repository/crazyflie-lib-python/master/installation/install/) 
 
 # Flying Drones
 1. First, you want to set up the initial positions of the crazyflies. We can do this by modifying `allCrazyflies.yaml` file in `~/crazyswarm/ros_ws/src/crazyswarm/launch/` 
